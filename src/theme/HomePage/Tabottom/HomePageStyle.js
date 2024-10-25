@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     color: "#343a40",
   },
   tripItem: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#e9ecef",
     padding: 15,
     marginBottom: 15,
     borderRadius: 10,
@@ -80,6 +80,45 @@ const styles = StyleSheet.create({
     color: "#868e96",
     textAlign: "center",
     marginTop: 20,
+  },
+  dropdownContainer: {
+    width: "100%",
+    alignSelf: "center",
+    marginBottom: 115,
+
+  },
+  dropdown: {
+    backgroundColor: "#ffffff",
+    borderColor: "#d1d1d1",
+    borderWidth: 1,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+  },
+  dropdownList: {
+    backgroundColor: "#ffffff",
+    borderColor: "#d1d1d1",
+    borderWidth: 1,
+    borderRadius: 8,
+    maxHeight: 550,
+    elevation: 3,
+    position: "absolute",
+    top: 40,
+    zIndex: 1000,
+  },
+  dropdownText: {
+    fontSize: 16,
+    color: "#333333",
+  },
+  placeholderStyle: {
+    color: "#9b9b9b",
+    fontSize: 16,
+  },
+  selectedItemContainer: {
+    backgroundColor: "#e6f7ff",
+  },
+  selectedItemLabel: {
+    color: "#007bff",
+    fontWeight: "bold",
   },
 });
 
