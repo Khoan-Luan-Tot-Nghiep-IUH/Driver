@@ -7,48 +7,40 @@ const styles = StyleSheet.create({
   },
   header: {
     backgroundColor: "#FF9000",
-    paddingVertical: 15,
+    paddingVertical: 20,
     alignItems: "center",
     paddingHorizontal: 20,
-    paddingTop: 40,
+    paddingTop: 30,
   },
   headerText: {
     color: "#fff",
-    fontSize: 18,
+    fontSize: 22,
     fontWeight: "bold",
+    textAlign: "center",
   },
-  tabsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
+  titleContainer: {
     backgroundColor: "#FFE0B2",
-    paddingVertical: 10,
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    borderRadius: 10,
+    alignItems: "center",
+    marginVertical: 15,
   },
-  tabItem: {
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 20,
-  },
-  tabText: {
-    fontSize: 14,
-    color: "#A0A0A0",
-  },
-  activeTab: {
-    backgroundColor: "#FFFFFF",
-  },
-  activeTabText: {
+  titleText: {
+    fontSize: 18,
     color: "#FF9000",
     fontWeight: "bold",
   },
   content: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
   },
   messageText: {
-    marginTop: 15,
+    display: "flex",
+    flex:1,
     fontSize: 16,
     color: "#FFFFFF",
     textAlign: "center",
+    marginTop: 10,
   },
 });
 

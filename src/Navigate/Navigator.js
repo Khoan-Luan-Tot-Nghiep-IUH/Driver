@@ -3,6 +3,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import Login from "../Screen/Home/Login";
+import BusTickets from "../Screen/HomePage/Tabbotom/BusTickets";
+import CurrentTrips from "../Screen/HomePage/TicketCar/CurrentTrips";
 import TabNavigator from "./Tabbotom";
 import { useDispatch } from "react-redux";
 import { loadUserFromStorage } from "../Redux/User/userSlice";
@@ -23,6 +25,8 @@ const StackNavigator = () => {
         <Stack.Screen name="Main">
           {(props) => <TabNavigator {...props} token={token} />}
         </Stack.Screen>
+        <Stack.Screen name="BusTickets" component={BusTickets} />
+        <Stack.Screen name="CurrentTrips" component={CurrentTrips} />
       </Stack.Navigator>
     </NavigationContainer>
   );

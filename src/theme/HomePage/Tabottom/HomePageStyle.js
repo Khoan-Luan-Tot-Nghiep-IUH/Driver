@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   tripItem: {
     backgroundColor: "#e9ecef",
     padding: 15,
-    marginBottom: 15,
+    marginBottom: 10,
     borderRadius: 10,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     color: "#007bff",
     fontWeight: "bold",
   },
+  
 });
 
 export default styles;

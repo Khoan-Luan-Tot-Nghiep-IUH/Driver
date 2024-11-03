@@ -34,16 +34,40 @@ const TabNavigator = ({ token }) => {
         },
         tabBarActiveTintColor: "#fff",
         tabBarInactiveTintColor: "#D3D3D3",
-        tabBarStyle: styles.tabBarStyle,
-        headerShown: false,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          elevation: 5,
+          backgroundColor: "#007BFF",
+          borderTopWidth: 0,
+          height: 60,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: -2,
+          },
+          shadowOpacity: 0.3,
+          shadowRadius: 6,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginBottom: 5,
+          fontWeight: "700",
+        },
+        tabBarItemStyle: {
+          padding: 5,
+        },
+        headerShown: false, // Đặt headerShown ở đây
       })}
     >
       <Tab.Screen name="Trang chủ">
         {(props) => <Home {...props} token={token} />}
       </Tab.Screen>
-      <Tab.Screen name="Vé xe">
+      {/* <Tab.Screen name="Vé xe">
         {(props) => <BusTickets {...props} token={token} />}
-      </Tab.Screen>
+      </Tab.Screen> */}
       <Tab.Screen name="Báo cáo">
         {(props) => <Notification {...props} token={token} />}
       </Tab.Screen>
