@@ -165,7 +165,7 @@ const Profile = () => {
 };
 
 const menuItems = [
-  { title: "Giới thiệu nhà xe", icon: "info-circle", screen: "IntroCar" },
+  { title: "Giới thiệu nhà xe", icon: "info-circle", screen: "intro" },
   { title: "Lộ trình phổ biến", icon: "line-chart", screen: "PopularCar" },
   { title: "Quy chế hoạt động", icon: "book", screen: "SettingCar" },
   { title: "Các loại xe", icon: "bus", screen: "TypeCar" },
