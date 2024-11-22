@@ -31,6 +31,7 @@ const StackNavigator = () => {
           {(props) => <TabNavigator {...props} token={token} />}
         </Stack.Screen>
         <Stack.Screen name="intro" component={IntroCar} />
+        
         {/* <Stack.Screen
           name="OperatingCar"
           component={OperatingCar}

@@ -15,11 +15,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
   },
-  loginText: {
+  loginText1: {
     color: "#FFF",
     fontWeight: "bold",
     fontSize: 18,
-    textAlign: "center",
   },
   subText: {
     color: "#FFF",
@@ -27,7 +26,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   profileIconContainer: {
-    paddingTop: 13,
+    paddingTop: 14,
   },
   profileIcon: {
     width: 65,
@@ -38,6 +37,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 15,
   },
+
   userInfoContainer: {
     padding: 20, // Add more padding for a spacious look
     shadowColor: "#000",

@@ -6,8 +6,10 @@ import CurrentTrips from "../../../Screen/HomePage/TicketCar/CurrentTrips";
 
 const BusTickets = () => {
   const route = useRoute();
-  const { tripId } = route.params;
+  const { tripId } = route.params;0
 
+  
+  console.log(tripId);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>

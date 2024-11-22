@@ -13,11 +13,13 @@ import config from "../../../../config";
 import styles from "../../../theme/HomePage/MenutabStyle/TicketCar/CompletedTrips";
 import { MaterialIcons, Ionicons, AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+
 const CurrentTrips = ({ tripId }) => {
-  // Receive navigation prop
   const [passengers, setPassengers] = useState([]);
+  const [totalAmountDue, setTotalAmountDue] = useState(0); // Thêm trạng thái để lưu totalAmountDue
   const token = useSelector((state) => state.user.userInfo?.token);
   const navigation = useNavigation();
+
   useEffect(() => {
     if (tripId) {
       fetchPassengers();
@@ -34,7 +36,9 @@ const CurrentTrips = ({ tripId }) => {
           },
         }
       );
+      console.log(response.data);
       setPassengers(response.data.passengers || []);
+      setTotalAmountDue(response.data.totalAmountDue || 0); // Cập nhật totalAmountDue
     } catch (error) {
       console.error(
         "Error fetching passengers:",
@@ -60,14 +64,8 @@ const CurrentTrips = ({ tripId }) => {
 
       if (response.data.success) {
         Alert.alert("Success", response.data.message);
-
-        setPassengers((prevPassengers) =>
-          prevPassengers.map((passenger) =>
-            passenger.bookingId === bookingId
-              ? { ...passenger, isCheckedIn: true }
-              : passenger
-          )
-        );
+        // Gọi lại API để cập nhật danh sách hành khách
+        fetchPassengers();
       } else {
         Alert.alert("Error", response.data.message || "Check-in failed.");
       }
@@ -94,7 +92,11 @@ const CurrentTrips = ({ tripId }) => {
         <Text style={styles.title}>Danh sách hành khách</Text>
       </View>
       <View style={styles.separator1}></View>
-
+      <View>
+        <Text style={styles.totalAmountText}>
+          Tổng số tiền cần thu: {totalAmountDue.toLocaleString()} VNĐ
+        </Text>
+      </View>
       <FlatList
         data={passengers}
         keyExtractor={(item) => item.bookingId}
@@ -131,6 +133,10 @@ const CurrentTrips = ({ tripId }) => {
                 >
                   {item.isCheckedIn ? " Đã lên xe" : " Chưa lên xe"}
                 </Text>
+              </View>
+              <View style={styles.statusContainer}>
+                <MaterialIcons name="attach-money" size={16} color="#4A90E2" />
+                <Text style={styles.phone}> Số tiền: {item.amountDue} VNĐ</Text>
               </View>
             </View>
             {!item.isCheckedIn && (
