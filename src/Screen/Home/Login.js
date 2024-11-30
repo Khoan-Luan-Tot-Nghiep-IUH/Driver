@@ -81,7 +81,7 @@ const Login = ({ navigation }) => {
       }
     } catch (err) {
       console.error("Error during login:", err.message);
-      Alert.alert("Lỗi", "Có lỗi xảy ra khi đăng nhập. Vui lòng thử lại.");
+      Alert.alert("Thông b", "Có lỗi xảy ra khi đăng nhập. Vui lòng thử lại.");
     } finally {
       setLoading(false);
     }

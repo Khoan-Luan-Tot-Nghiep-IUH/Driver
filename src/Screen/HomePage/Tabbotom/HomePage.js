@@ -43,7 +43,6 @@ const HomePage = ({ navigation }) => {
       );
     }
   };
-
   // Function to update trip status
   const updateTripStatus = async (tripId, newStatus) => {
     try {

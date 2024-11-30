@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import { StyleSheet } from "react-native";
 import Home from "../Screen/HomePage/Tabbotom/HomePage";
-import BusTickets from "../Screen/HomePage/Tabbotom/BusTickets";
 import Notification from "../Screen/HomePage/Tabbotom/Notification";
 import Profile from "../Screen/HomePage/Tabbotom/Profile";
 import { useNavigation } from "@react-navigation/native";

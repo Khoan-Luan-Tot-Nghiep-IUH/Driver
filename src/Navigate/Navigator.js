@@ -10,8 +10,8 @@ import { useDispatch } from "react-redux";
 import { loadUserFromStorage } from "../Redux/User/userSlice";
 
 import IntroCar from "../Screen/HomePage/Info/intro";
-
-
+import OperatingCar from "../Screen/HomePage/Info/OperatingCar";
+import PopularCar from "../Screen/HomePage/Info/PopularCar";
 
 const Stack = createStackNavigator();
 
@@ -32,7 +32,7 @@ const StackNavigator = () => {
         </Stack.Screen>
         <Stack.Screen name="intro" component={IntroCar} />
         
-        {/* <Stack.Screen
+        <Stack.Screen
           name="OperatingCar"
           component={OperatingCar}
           options={{ title: "Giới thiệu nhà xe" }}
@@ -42,7 +42,7 @@ const StackNavigator = () => {
           component={PopularCar}
           options={{ title: "Lộ trình phổ biến" }}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="TypeCar"
           component={TypeCar}
           options={{ title: "Văn phòng nhà xe" }}

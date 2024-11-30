@@ -21,8 +21,8 @@ import config from "../../../../config";
 const Profile = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.userInfo);
-  const token = useSelector((state) => state.user.userInfo?.token);
+  const user = useSelector((state) => state.user?.userInfo);
+  const token = useSelector((state) => state.user?.userInfo?.token);
   console.log(token);
   const [modalVisible, setModalVisible] = useState(false); // Trạng thái hiển thị modal
   const [fullName, setFullName] = useState(user?.fullName || "");
