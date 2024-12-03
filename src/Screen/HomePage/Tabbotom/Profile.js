@@ -24,7 +24,7 @@ const Profile = () => {
   const user = useSelector((state) => state.user?.userInfo);
   const token = useSelector((state) => state.user?.userInfo?.token);
   console.log(token);
-  const [modalVisible, setModalVisible] = useState(false); // Trạng thái hiển thị modal
+  const [modalVisible, setModalVisible] = useState(false); 
   const [fullName, setFullName] = useState(user?.fullName || "");
   const [phoneNumber, setPhoneNumber] = useState(user?.phoneNumber || "");
   console.log(fullName);
@@ -34,7 +34,6 @@ const Profile = () => {
     dispatch(logout());
     navigation.navigate("Login");
   };
-
   // Hàm cập nhật thông tin
   const handleUpdate = async () => {
     try {
@@ -52,7 +51,6 @@ const Profile = () => {
       );
       console.log("Response from API:", response.data);
       Alert.alert("Thành công", "Cập nhật thông tin thành công");
-
       // Cập nhật Redux với dữ liệu mới từ API
       dispatch(updateUserInfo({ fullName, phoneNumber }));
       setModalVisible(false);
@@ -61,7 +59,6 @@ const Profile = () => {
       Alert.alert("Lỗi", error.message || "Cập nhật thông tin thất bại");
     }
   };
-
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={styles.container}>
@@ -96,7 +93,6 @@ const Profile = () => {
             </View>
           </TouchableOpacity>
         </View>
-
         <View style={styles.menuContainer}>
           {menuItems.map((item, index) => (
             <TouchableOpacity
@@ -114,11 +110,9 @@ const Profile = () => {
             </TouchableOpacity>
           ))}
         </View>
-
         <Text style={styles.footerText}>
           Công ty TNHH Du Lịch Vận Tải Thành và Toàn
         </Text>
-
         {/* Modal hiển thị và cập nhật thông tin người dùng */}
         <Modal
           animationType="slide"
@@ -167,11 +161,6 @@ const Profile = () => {
 const menuItems = [
   { title: "Tạo Phiếu Chi", icon: "info-circle", screen: "intro" },
   { title: "Lộ trình phổ biến", icon: "line-chart", screen: "PopularCar" },
-  { title: "Quy chế hoạt động", icon: "book", screen: "SettingCar" },
-  { title: "Các loại xe", icon: "bus", screen: "TypeCar" },
-  { title: "Ưu đãi của tôi", icon: "gift", screen: "SettingCar" },
-  { title: "Hỗ trợ", icon: "question-circle", screen: "HelpCar" },
-  { title: "Góp ý", icon: "envelope", screen: "Complant" },
 ];
 
 export default Profile;

@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Ionicons";
 import { StyleSheet } from "react-native";
 import Home from "../Screen/HomePage/Tabbotom/HomePage";
-import Notification from "../Screen/HomePage/Tabbotom/Notification";
 import Profile from "../Screen/HomePage/Tabbotom/Profile";
 import { useNavigation } from "@react-navigation/native";
 
@@ -28,7 +27,6 @@ const TabNavigator = ({ token }) => {
           else if (route.name === "Tra cứu") iconName = "search";
           else if (route.name === "Báo cáo") iconName = "notifications";
           else if (route.name === "Thông tin") iconName = "person";
-
           return <Icon name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "#fff",
@@ -67,9 +65,9 @@ const TabNavigator = ({ token }) => {
       {/* <Tab.Screen name="Vé xe">
         {(props) => <BusTickets {...props} token={token} />}
       </Tab.Screen> */}
-      <Tab.Screen name="Báo cáo">
+      {/* <Tab.Screen name="Báo cáo">
         {(props) => <Notification {...props} token={token} />}
-      </Tab.Screen>
+      </Tab.Screen> */}
       <Tab.Screen name="Thông tin">
         {(props) => <Profile {...props} token={token} />}
       </Tab.Screen>

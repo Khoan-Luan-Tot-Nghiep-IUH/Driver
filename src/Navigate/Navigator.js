@@ -8,17 +8,14 @@ import CurrentTrips from "../Screen/HomePage/TicketCar/CurrentTrips";
 import TabNavigator from "./Tabbotom";
 import { useDispatch } from "react-redux";
 import { loadUserFromStorage } from "../Redux/User/userSlice";
-
 import IntroCar from "../Screen/HomePage/Info/intro";
 import OperatingCar from "../Screen/HomePage/Info/OperatingCar";
 import PopularCar from "../Screen/HomePage/Info/PopularCar";
-
 const Stack = createStackNavigator();
 
 const StackNavigator = () => {
   const token = useSelector((state) => state.user.userInfo?.token); // Access token from Redux
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(loadUserFromStorage());
   }, [dispatch]);
@@ -31,7 +28,7 @@ const StackNavigator = () => {
           {(props) => <TabNavigator {...props} token={token} />}
         </Stack.Screen>
         <Stack.Screen name="intro" component={IntroCar} />
-        
+
         <Stack.Screen
           name="OperatingCar"
           component={OperatingCar}

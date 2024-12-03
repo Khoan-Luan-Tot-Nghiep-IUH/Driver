@@ -1,9 +1,9 @@
 {
   "expo": {
-    "name": "StickerSmash",
+    "name": "Driver",
     "slug": "StickerSmash",
     "version": "1.0.0",
-    "scheme": "stickersmash",
+    "scheme": "Driver",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
